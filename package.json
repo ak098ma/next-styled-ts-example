@@ -1,0 +1,24 @@
+{
+  "name": "next-styled-ts-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jigengineer/next-styled-ts-example.git",
+  "author": "Jigen <jigen098@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "next",
+    "build": "next build && next export"
+  },
+  "dependencies": {
+    "next": "^11.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "@types/styled-components": "^5.1.11",
+    "typescript": "^4.3.5"
+  }
+}
