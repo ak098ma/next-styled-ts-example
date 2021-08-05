@@ -35,10 +35,19 @@ const Home = memo(() => {
       </div>
       <div>count = {count}</div>
       <div>count * 2 = {doubleCount}</div>
-      <Link href="/cars">
-        <a>Go to cars page</a>
-      </Link>
-      <button onClick={goToControlDomPage}>Go to control-dom page</button>
+      <div>
+        <Link href="/cars">
+          <a>Go to cars page</a>
+        </Link>
+      </div>
+      <div>
+        <button onClick={goToControlDomPage}>Go to control-dom page</button>
+      </div>
+      <div>
+        <Link href="/recoil/atom1">
+          <a>Recoil Tutorial</a>
+        </Link>
+      </div>
     </StyledContent>
   )
 })

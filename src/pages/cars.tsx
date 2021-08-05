@@ -17,9 +17,7 @@ const Cars = memo(() => {
   const [cars, setCars] = useState<Car[]>()
 
   useEffect(() => {
-    fetchCars()
-      .then((res) => res.json())
-      .then((json) => setCars(json.cars))
+    fetchCars().then((cars) => setCars(cars))
   }, [])
 
   return (
