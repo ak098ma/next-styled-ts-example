@@ -1,11 +1,11 @@
 import { memo } from 'react'
-import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil'
 import Link from 'next/link'
 import { counterState } from 'state/counterState'
 
 const Action = memo(() => {
-  const setCount = useSetRecoilState(counterState)
-  return <button onClick={() => setCount((n) => n + 1)}>+1</button>
+  const resetCount = useResetRecoilState(counterState)
+  return <button onClick={resetCount}>+1</button>
 })
 
 const Viewer = memo(() => {
@@ -19,7 +19,7 @@ const Atom3 = memo(() => {
       <div>Example of re-render optimization</div>
       <Action />
       <Viewer />
-      <Link href="/recoil/selector1">
+      <Link href="/recoil/atom4">
         <a>Next</a>
       </Link>
     </div>
