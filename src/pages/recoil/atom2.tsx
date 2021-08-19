@@ -1,15 +1,15 @@
 import { memo } from 'react'
-import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { useRecoilState } from 'recoil'
 import Link from 'next/link'
 import { counterState } from 'state/counterState'
 
 const Action = memo(() => {
-  const setCount = useSetRecoilState(counterState)
+  const [, setCount] = useRecoilState(counterState)
   return <button onClick={() => setCount((n) => n + 1)}>+1</button>
 })
 
 const Viewer = memo(() => {
-  const count = useRecoilValue(counterState)
+  const [count] = useRecoilState(counterState)
   return <div>{count}</div>
 })
 
