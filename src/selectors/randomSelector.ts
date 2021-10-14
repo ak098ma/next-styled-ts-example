@@ -1,5 +1,10 @@
 import { fetchRandomNumber } from 'apis/fetchRandomNumber'
-import { atom, selector, useSetRecoilState } from 'recoil'
+import {
+  atom,
+  selector,
+  useSetRecoilState,
+  useRecoilValueLoadable,
+} from 'recoil'
 
 const requestIdState = atom({
   key: 'requestIdState',
@@ -15,6 +20,10 @@ export const randomSelector = selector({
 })
 
 export const useRefetchRandomNumber = () => {
+  const loadable = useRecoilValueLoadable(randomSelector)
   const setRequestId = useSetRecoilState(requestIdState)
+  if (loadable.state === 'loading') {
+    return () => {}
+  }
   return () => setRequestId((id) => id + 1)
 }

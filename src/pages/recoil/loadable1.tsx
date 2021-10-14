@@ -1,4 +1,5 @@
 import { memo } from 'react'
+import Link from 'next/link'
 import { useRecoilValueLoadable } from 'recoil'
 import {
   randomSelector,
@@ -17,7 +18,11 @@ const Loadable = memo(() => {
       <div>
         <button onClick={refetch}>Refetch</button>
       </div>
-      <div>WIP: Next</div>
+      <div>
+        <Link href="/recoil/loadable2">
+          <a>Next</a>
+        </Link>
+      </div>
     </div>
   )
 })
